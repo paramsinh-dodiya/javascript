@@ -26,7 +26,7 @@ buttons.forEach( function (button) {
         // method 3
         switch (e.target.id) {
             case "grey": // also use "grey" = e.target.id
-                body.style.backgroundColor = "grey"; // here to
+                body.style.backgroundColor = "grey"; // here to 
                 break;
             case "red":
                 body.style.backgroundColor = "red";
