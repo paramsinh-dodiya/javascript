@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Colour Game</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        #options {
+            display: grid;
+            grid-template-columns: repeat(3, 0fr);
+            gap: 10px;
+        }
+
+        #options > div {
+            height: 60px;
+            width: 60px;
+            margin: 5px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        #options > div:hover {
+            /* opacity: 0.8; */
+            scale: 1.1;
+            transition: 0.4s all;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Guess the Colour Game</h1>
+
+    <div>
+        <h1 id="colour-code"></h1>
+    </div>
+
+    <div>
+        <h3>Score: <span id="score"></span></h3>
+    </div>
+
+    <div id="options">
+        <script src="script.js"></script>
+
+    </div>
+
+    
+</body>
+</html>
