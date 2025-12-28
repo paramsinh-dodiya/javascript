@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loops in js</title>
+</head>
+<body>
+    
+    <script>
+
+        // loops 
+        // for loop -> if you know how many times you want to run the loop
+        for (let i = 0; i <= 10; i++) {
+            console.log("Hello, World! " + i);
+        }
+
+    </script>
+
+    <script>
+
+         // while loop -> if you don't know how many times you want to run the loop
+        let ip = 0
+        let house = 20
+        while (ip != house) {
+            ip = ip + 1;           
+            console.log("step taken " + ip);
+        }
+
+    </script>
+
+    <script>
+
+        // do while loop -> it will run at least once after that check condition
+        let initial_position = 0
+        let destination = 25
+
+        do {
+            initial_position = initial_position + 1;
+            console.log("Current position: " + initial_position);
+        } while (initial_position != destination);
+
+    </script>
+
+    <script>
+        // guessing game using do while loop
+        let no = 10;
+        let guess = 0;
+        do {
+            guess = parseInt(prompt("Guess a number between 1 and 15:"));
+            if(guess == no) {
+
+                alert("Congratulations! You guessed the number.");
+                break;
+            }
+        } while (guess != 0);
+
+    </script>
+
+</body>
+</html>

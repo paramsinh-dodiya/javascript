@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>logical operators</title>
+</head>
+<body>
+    
+    <script>
+
+        // logical operators
+        // AND (&&) -> all conditions should be true
+
+        let a = 10;
+        let b = 40;     
+        let c = 30; 
+
+        if (a < b && b < c) {
+            console.log("All conditions are true");
+        } else {
+            console.log("At least one condition is false");
+        }
+
+        // OR (||) -> at least one condition should be true
+        if (a < b || b > c) {
+            console.log("At least one condition is true");
+        } else {
+            console.log("All conditions are false");
+        }   
+
+        // NOT (!) -> negates the condition
+        if (!(a > b)) {
+            console.log("a is not greater than b");
+        } else {
+            console.log("a is greater than b");
+        }
+
+        
+
+    </script>
+
+</body>
+</html>

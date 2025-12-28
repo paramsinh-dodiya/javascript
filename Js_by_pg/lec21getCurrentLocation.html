@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Users Location</title>
+</head>
+<body>
+    
+    <h1>Getting users Location</h1>
+
+    <button id="get-location">Get Location</button>
+
+    <script>
+
+        const button = document.getElementById('get-location');
+
+        async function getData(lat, long) {
+        const promise = await fetch(`http://api.weatherapi.com/v1/current.json?key=5f330a58ab1c442a97a132214252407&q=${lat},${long}&aqi=yes`);
+
+        return await promise.json()
+}
+
+        async function gotLocation(position) {
+            const result = getData(position.coords.latitude, position.coords.longitude);
+            console.log(result);
+        }
+
+        function failedToGet() {
+            console.log("There was some issue generate");
+        }
+
+        button.addEventListener('click', () => {
+            navigator.geolocation.getCurrentPosition(gotLocation, failedToGet)
+        });
+
+    </script>
+
+</body>
+</html>

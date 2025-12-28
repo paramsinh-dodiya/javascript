@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listeners in JavaScript</title>
+</head>
+<body>
+
+    <h1>Event Listeners In JavaScript</h1>
+
+        <nav class="block">
+            <p class="paragraph">This is a paragraph inside the nav element.</p>
+        </nav>
+        <div class="block">
+            <h4 id="name-block">hey there My name is 
+                <span id="user">Paramsinh Dodiya</span><!--onclick="alert('Hello, Paramsinh Dodiya!')" -->
+                :)
+            </h4>
+            <p class="paragraph">This is a paragraph inside the div element.</p>
+            <pre><code class="block">console.log("Hello, World!");</code></pre>
+            
+        </div>
+
+
+    <button onclick="handleClick()">Button Using function</button><!--onclick="console.log('Button clicked!')"-->
+
+    <button id="clickButton">Button Using Id</button>
+
+    <script>
+
+        function handleClick() {
+            console.log("Button clicked!");
+            alert("Hello, Paramsinh Dodiya!");
+        };
+
+    </script>
+
+    <script>
+
+        //use of this function may chance of overwriting the previous function
+        const button = document.getElementById("clickButton");
+        const nameBlock = document.getElementById("name-block");
+
+        button.onclick = function() { // also can use array =>
+            console.log("Button with ID clicked!");
+        }
+        //like this 
+       
+         /*    <script>
+                 button.onclick = function() { // overwriting the previous function
+                     console.log("Button Hacked!");
+                 }
+             /script>
+        */
+
+
+        //use of addEventListener to avoid overwriting the previous function and run both functions
+            button.addEventListener("click", function() {
+                if (nameBlock.style.color === "red") {
+                    nameBlock.style.color = "green"; // change color to green if it is red
+                } else {
+                    nameBlock.style.color = "red"; // change color to red if it is not red
+                }
+                console.log("Button with ID clicked using addEventListener!");
+            });
+         
+
+            const allChildren = document.querySelector("body").children;
+            for (let i = 0; i < allChildren.length; i++) {
+                allChildren[i].addEventListener("click", ()=> {
+                    allChildren[i].remove(); // change background color of all children elements
+                });
+            }
+
+    </script>
+
+    <!-- <script>
+        //using addEventListener run both functions and avoid chance of overwriding
+
+        button.addEventListener("click", function() {
+            console.log("Hello, Paramsinh Dodiya using addEventListener!");
+        });
+
+    </script> -->
+
+
+    
+</body>
+</html>

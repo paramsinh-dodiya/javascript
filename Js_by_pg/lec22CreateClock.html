@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating clock</title>
+</head>
+<body>
+    
+    <h1>Creating clock using JS</h1>
+
+    <div>
+        <h1 id="time"></h1>
+        <button id="stop">Stop timer</button>
+    </div>
+
+    <script>
+
+        const button = document.getElementById('stop');
+
+        function showTime() {
+            const currentTime = new Date();
+            const time = `${currentTime.getHours()}:${currentTime.getMinutes()}:${currentTime.getSeconds()}`
+            document.getElementById("time").innerText = time;
+    
+        }
+
+        let interval = setInterval(showTime, 1000);
+
+        button.addEventListener('click', () => {
+            clearInterval(interval);
+        })
+        // setInterval(() => console.log('hii'), 2000)
+
+        // setInterval(() => {
+        //     showTime();
+        // }, 1000);
+
+    </script>
+
+
+</body>
+</html>

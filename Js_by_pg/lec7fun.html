@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function in js</title>
+</head>
+<body>
+    
+    <script>
+
+        // Function declaration
+        function Hello() {
+            console.log("Hello, Parubha from function");
+        }
+       Hello()
+       Hello()
+    </script>
+
+    <script>
+
+
+        function add (a, b) {
+          console.log("Adding two numbers:", a + b);
+        }
+        add(5, 10); // Outputs: 15
+        add(20, 30); // Outputs: 50
+    </script>
+     
+     <script>
+
+        function multiply(c, d){
+            console.log('multiplying two numbers : ', c * d);
+        }
+        multiply(5, 10); // Outputs: 50
+        multiply(20, 30); // Outputs: 600
+
+     </script>
+
+     <script>
+
+        function subtract(e, f) {
+            return e - f;
+        }
+        let result = subtract(10, 5);
+        console.log("Subtracting two numbers:", result);
+
+
+     </script>
+
+     <script>
+        //important
+        function addNumbers() {
+
+            let sum = 0;
+            for (let i = 0; i < arguments.length; i++) {
+            console.log(arguments[i]);
+            sum += arguments[i];
+            }    
+        return sum;
+        }
+        let Outputs = addNumbers(11, 22, 33, 44, 100);
+        console.log("Sum of numbers:", Outputs); 
+
+     </script>
+
+     <script>
+
+        //spread operator
+        function addNumbers(...param) {
+            let sum = 0;
+            for (let i = 0; i < param.length; i++) {
+                sum += param[i];
+            }
+            return sum;
+        }
+        let op = addNumbers(10, 2, 3, 4, 5);
+        console.log("Sum of numbers using spread operator:", op);
+
+     </script>
+
+
+</body>
+</html>
+

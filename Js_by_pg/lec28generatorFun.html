@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iterator | Generator Functions</title>
+</head>
+<body>
+    
+    <h1>Iterator | Generator Functions or Yield</h1>
+    <button id="btn">Get Next</button>
+
+    <script>
+       
+        // function makeIterator(start = 0, end = Infinity, step = 1) {
+        //     let nextStart = start;
+        //     let iterationCount = 0;
+
+        //     return {
+        //         next() {
+        //             let result;
+        //             if (nextStart < end) {
+        //                 result = { value: nextStart, done: false };
+        //                 nextStart += step;
+        //                 iterationCount++;
+                   
+        //             } else {
+        //                 result = { value: undefined, done: true };
+        //             }
+        //             return result;
+        //         }
+        //     }
+        // }
+
+        // const myIterator = makeIterator(0, 5, 1);
+        // let result = myIterator.next();
+
+        // while (!result.done) {
+        //     console.log(result.value);
+        //     result = myIterator.next();
+        // }
+
+    </script>
+
+    <script>
+
+        function* count() {
+            yield 2;
+            yield 4;
+            yield 6;
+            yield 8;
+            yield 10;
+
+        }
+
+        // const even = count();
+        // for (const value of even ) {
+        //     console.log(value);
+        // }
+
+        function* makeNewIterator(start, end) {
+            for (let i = start; i <= end; i++) {
+                yield i;
+            }
+        }
+
+        const btn = document.getElementById('btn');
+        let one = makeNewIterator(1, 20, 1);
+        // for (const value of one) {
+        //     console.log(value);
+        // }
+        btn.addEventListener('click', () => {
+            btn.innerText = one.next().value;
+        })
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+</head>
+<body>
+    
+    <h1>Local Storage</h1>
+
+     <nav class="block">
+        <p class="paragraph">This is a paragraph inside the nav element.</p>
+    </nav>
+    <div class="block">
+        <h4 id="name-block">hey there My name is 
+            <span id="user">Paramsinh Dodiya</span>:)
+        </h4>
+        <p class="paragraph">This is a paragraph inside the div element.</p>
+        <pre><code class="block">console.log("Hello, World!");</code></pre>
+        
+    </div>
+
+    <div id="my-container"></div>
+    <input id="username" type="text" placeholder="Enter your Name">
+    <button id="clickButton">Click Me!</button>
+
+    <script>
+
+        const button =  document.getElementById('clickButton');
+        const uname = document.getElementById('username');
+        const user = document.getElementById('user')
+
+        button.addEventListener('click', () => {
+            const value = uname.value;
+            localStorage.setItem('name', value);
+            location.reload();
+        });
+
+        window.addEventListener('load', () => {
+            const value = localStorage.getItem('name');
+            user.innerText = value;
+        });
+
+    </script>
+
+
+
+
+</body>
+</html>

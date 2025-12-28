@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promisification</title>
+</head>
+<body>
+
+    <h1>Promisification in Js </h1>
+    <h3>Imp for Interview</h3>
+
+    <!-- without promise-->
+    <script>
+
+        function loadScript(src, callback) {
+            const script = document.createElement('script');
+            script.src = src;
+            script.onload = () => callback(null, script);
+            script.onerror = () => callback(new Error(`Failed to load script: ${src}`));
+            document.head.append(script);
+
+        }
+
+        //Execution without promise and this script code
+
+        /* loadScript('script.js', (err, script) => {
+            if (err) {
+                console.error('Error loading script:', err);
+            } else {
+                console.log('Script loaded successfully:', script);
+            }
+        }); */
+
+    </script>
+
+    <!-- with promisification -->
+     <script>
+
+        function promisify(fn) {
+            return function(...args) {
+                return new Promise((resolve, reject) => {
+                    fn(...args, (err, result) => {
+                        if (err) {
+                            reject(err);
+                        } else {
+                            resolve(result);
+                        }
+                    });
+                });
+            }
+        }
+        const loadScriptNew = promisify(loadScript);
+
+        // loadScriptNew('script.js')
+        //     .then(script => {
+        //         console.log('Script loaded successfully:', script);
+        //     })
+        //     .catch(err => {
+        //         console.error('Error loading script:', err);
+        //     });
+
+    (async () =>  {
+        // if any error occurs, it will be caught by the try catch block
+
+        try {
+             const result = await loadScriptNew('script.js');
+            console.log('Done:');
+        }
+        catch (err) {
+            console.error('Error he code me');
+        }
+       
+    })();
+
+     </script>
+
+
+</body>
+</html>
+           

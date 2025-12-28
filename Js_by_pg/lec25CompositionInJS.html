@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Composition in JS</title>
+</head>
+<body>
+
+    <h1>Composition in JavaScript</h1>
+
+    <script>
+
+        const compose = (f, g) => (x) => f(g(x));
+        const add2 = (x) => x + 2;
+        const multiplyBy3 = (x) => x * 3;
+
+        const add2ThenMultiplyBy3 = compose(multiplyBy3, add2);
+        console.log(add2ThenMultiplyBy3(5)); // Output: 21
+
+    </script>
+
+    <script>
+
+        function multi(args) {
+            return args[0] * args[1];
+        }
+
+        function square(val) {
+            return val * val;
+        }
+
+        const composeAll = (...fns) => (...values) => fns.reduce((a, b) => b(a), values);
+        const composed = composeAll(multi, square, (val) => val + 1);
+        console.log(composed(2, 3)); // Output: 36
+
+    </script>
+
+
+
+</body>
+</html>

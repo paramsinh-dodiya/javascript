@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IIFE </title>
+</head>
+<body>
+
+    <h1>IIFE (Immediately Invoked Function Expression)</h1>
+    <h3>This is important concept of JS</h3>
+
+    <script>
+
+        // Example of IIFE
+        (function() {
+            console.log("This is an IIFE!");
+        })();
+
+        // IIFE with parameters
+        (function(name) {
+            console.log(`Hello, ${name}!`);
+        })("JavaScript");
+
+        // IIFE returning a value
+        const result = (function(a, b) {
+            return a + b;
+        })(5, 10);
+        console.log(`Result of IIFE: ${result}`);
+
+        (() => console.log("I am ES6 IIFE"))();
+
+    </script>
+
+    <script>
+
+        const atm = function (initialBalance) {
+            let balance = initialBalance;
+
+            return {
+                deposit: function(amount) {
+                    balance += amount;
+                    console.log(`Deposited: ${amount}`);
+                },
+                withdraw: function(amount) {
+                    if (amount > balance) {
+                        console.log("Insufficient funds");
+                    } else {
+                        balance -= amount;
+                        console.log(`Withdrew: ${amount}`);
+                    }
+                },
+                getBalance: function() {
+                    console.log(`Current balance: ${balance}`);
+                }
+            };
+        };
+        const param = atm(10000);
+        param.deposit(5000);
+        param.getBalance();
+        param.withdraw(2000);
+        param.getBalance();
+
+    </script>
+
+    <script>
+
+        const newAtm = function (initialBal) {
+            let bal = initialBal;
+            function withdrawal(amt) {
+                if (amt > bal) {
+                    console.log("Aaukat ke hisab se zyada hai");
+                } else {
+                    bal -= amt;
+                    return bal;
+                }
+            }
+            return { withdrawal };
+        };
+        const parubha = newAtm(10000);
+        console.log(parubha.withdrawal(2000));
+        console.log(parubha.withdrawal(9000));
+        console.log(parubha.withdrawal(2000));
+
+    </script>
+
+
+</body>
+</html>

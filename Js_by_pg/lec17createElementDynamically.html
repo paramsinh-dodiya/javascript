@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Elements Dynamically</title>
+</head>
+
+<body>
+
+    <h1>Create Elements Dynamically</h1>
+
+    <nav class="block">
+        <p class="paragraph">This is a paragraph inside the nav element.</p>
+    </nav>
+    <div class="block">
+        <h4 id="name-block">hey there My name is 
+            <span id="user">Paramsinh Dodiya</span>:)
+        </h4>
+        <p class="paragraph">This is a paragraph inside the div element.</p>
+        <pre><code class="block">console.log("Hello, World!");</code></pre>
+        
+    </div>
+
+    <div id="my-container"></div>
+    <button id="clickButton">Click Me!</button>
+
+    <script>
+
+        const container = document.getElementById("my-container");
+        const button = document.getElementById("clickButton");
+
+        // button.addEventListener("click", () => {
+        //     const element = document.createElement("h1");
+        //     element.innerText = "Paramsinh Dodiya";
+        //     container.appendChild(element);
+        // });
+
+        let count = 1;
+        button.addEventListener("click", () => {
+            const element = document.createElement("li");
+            element.innerText = count + " - Paramsinh Dodiya";
+            container.appendChild(element);
+            count++;
+        });
+
+    </script>
+
+
+</body>
+</html>

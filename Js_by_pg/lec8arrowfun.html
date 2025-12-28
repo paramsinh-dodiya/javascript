@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow function in JS</title>
+</head>
+<body>
+    
+    <script>
+
+        //arrow function
+        //1. syntax
+
+        const sayHello = () => {
+            console.log("Hello, Arrow Function!");
+        };
+        const add = (a, b) => {
+            return a + b;
+        };
+        const addv2 = (a, b) => a + b; // implicit return
+
+        sayHello();
+        console.log(add(5, 20));
+        console.log(addv2(9, 20));
+
+        //2. 'arguments' keyword
+
+        const addNum = (...param) => {
+            console.log(param);
+            let sum = 0;
+            for (let i = 0; i < param.length; i++) {
+                sum = sum + param[i];
+            }
+            return sum;
+
+        }
+        let op = addNum(10, 20, 30, 40);
+        console.log(op);
+
+        //3. hoisting
+
+        sayHi();
+
+        function sayHi() {
+            console.log("Hi, Hoisting!");// is not work in arrow function
+        }
+
+        //4. this keyword
+
+        const obj = {
+            value : 60,
+            myFunc : () => {
+                console.log(this.value);// 'this' refers to the global object, not the object itself
+                // In arrow functions, 'this' is lexically bound, meaning it takes 'this
+            }
+        };
+        obj.myFunc(); // Outputs: undefined
+
+
+
+        const object = {
+            value : 60,
+            myFunc : function() {
+                console.log(this.value);
+            }
+        };
+        object.myFunc(); // Outputs: 60
+
+    </script>
+
+</body>
+</html>

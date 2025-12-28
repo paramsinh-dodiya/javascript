@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GetElementById</title>
+    <style>
+        .red {
+            color: red;
+        }
+        .underline {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>GetElementById in DOM</h1>
+
+    <nav class="block">
+        <p class="paragraph">This is a paragraph inside the nav element.</p>
+    </nav>
+
+    <div>
+        <div>
+            <h2>This is div 2</h2>
+        </div>
+    </div>
+
+    <div class="block">
+        <h4>hey there My name is <span class="red" id="user">Paramsinh Dodiya</span>:)</h4>
+        <p class="paragraph" style="color: blue;">This is a paragraph inside the div element.</p>
+        <pre><code class="block">console.log("Hello, World!");</code></pre>
+    </div>
+
+    <script>
+
+        const user = document.getElementById("user");
+        console.log(user);
+        user.classList.add("underline"); // add classes
+        console.log(user.classList);
+        // user.classList.remove("red"); // remove class
+        // user.innerText = "New User"; // change innerText
+
+   </script>
+
+
+   <script>
+
+    const user2 = document.getElementById("user");
+    console.log(user2);
+    // user2.style.color = "green"; // change style
+    user2.style.fontSize = "20px"; // change font size
+    user2.style.textDecoration = "none"; // remove underline
+    user2.parentElement.style.backgroundColor = "lightgray"; // change parent background color
+    // user2.remove(); // remove element from DOM
+    
+   </script>
+   
+
+
+</body>
+</html>

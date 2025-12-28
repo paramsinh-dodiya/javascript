@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>currying in JS</title>
+</head>
+<body>
+    
+    <h1>Currying in JavaScript advance and interview question</h1>
+
+    <script>
+
+        function add(a) {
+            return function(b) {
+                return function(c) {
+                    return a + b + c;
+                };
+            };
+        };
+        console.log(add(4)(6)(5));
+
+    </script>     
+
+    <script>
+
+        function sendAutoEmail(to) {
+            return function(subject) {
+                return function(message) {
+                    console.log(`Email sent to: ${to}`);
+                    console.log(`Subject: ${subject}`);
+                    console.log(`Message: ${message}`);
+                };
+            };
+        };
+
+        let step1 = sendAutoEmail("paramsinh1@gmail.com");
+        let step2 = step1("Currying in JS");
+        step2("Hello, this is a test email using currying!");
+
+    </script>
+
+    <script>
+
+        //also use this method
+        const sendEmail = (to) => (subject) => (message) => {
+            console.log(`Email sent to: ${to}`);
+            console.log(`Subject: ${subject}`);
+            console.log(`Message: ${message}`);
+        };
+        let steps1 = sendEmail("paramsinhdodiya01@gmail.com");
+        let steps2 = steps1("Currying in JavaScript");
+        steps2("Hello, this is a test email using currying! in JavaScript");
+
+
+    </script>
+
+
+</body>
+</html>

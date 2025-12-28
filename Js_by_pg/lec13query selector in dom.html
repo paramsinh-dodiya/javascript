@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query selector in DOM</title>
+</head>
+<body>
+    
+    <h1>Query Selector in DOM</h1>
+
+    <nav class="block">
+        <p class="paragraph">This is a paragraph inside the nav element.</p>
+    </nav>
+
+    <div>
+        <div>
+            <h2>This is div 2</h2>
+        </div>
+    </div>
+
+    <div class="block">
+        <h4>hey there My name is <span id="user">Paramsinh Dodiya</span>:)</h4>
+        <p class="paragraph">This is a paragraph inside the div element.</p>
+        <pre><code class="block">console.log("Hello, World!");</code></pre>
+    </div>
+    
+
+    <script>
+    
+        // querySelector
+        /* 
+        - tag name
+        - id # 
+        - class .
+        */
+        // const body = document.querySelector("body");
+        // console.log(body);
+        // console.log(body.innerHTML)
+
+        // const div = document.querySelector("div");//pick first element | div
+        // console.log(div.innerHTML);
+        // div.innerHTML = "<h1>Hacked</h1>"; // change innerHTML
+
+        // const user = document.querySelector("#user");
+        // // console.log(user);
+        // console.log(user.innerText); // Paramsinh Dodiya
+        // user.innerText = "New User"; // change innerText
+
+         const ele = document.querySelector(".block");
+         console.log(ele); 
+         console.log(ele.innerHTML);
+        // using children and parentElement we can find the perticular elements of that tag
+
+        const ele2 = document.querySelectorAll(".block");
+        console.log(ele2); // NodeList(2) [div.block, nav.block]
+        ele2.forEach((ele) => {
+            console.log(ele.innerHTML);
+        });
+
+    </script>
+
+
+</body>
+</html>

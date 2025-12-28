@@ -1,0 +1,39 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arrays in js</title>
+ </head>
+ <body>
+   
+    <script>
+
+        const students = ["Alice", "Bob", "Charlie", "David"];
+        console.log(students);
+        console.log(students.length);
+        console.log(students[3]);
+        console.log(students[0] = "Alice in Borderland");
+        console.log(students[0]);
+        console.log(students);
+        students.push("Eve");// add element at the end
+        students.push("Frank");
+        console.log(students);
+
+
+    </script>
+
+    <script>
+
+        const array = [1, true, "Hello", null, undefined, {name: "John"}, [1, 2, 3]];
+        console.log(array);//its a heterogeneous array
+        console.log(array.indexOf(undefined)); // -1 means not found
+        console.log(array.indexOf("Hello")); // 2 means found at index 2
+        console.log(array.pop()); // removes the last element and returns it
+        console.log(array); // [1, true, "Hello", null, undefined, {name: "John"}]
+        console.log(array.reverse()); // removes the first element and returns it
+
+    </script>
+
+ </body>
+ </html>
