@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Learnings</title>
+</head>
+<body>
+    
+    <div class="bg-black">
+        <h1 id="title" class="headings">DOM Learnings with Paramsinh <span style="display: none;">hidden text</span></h1>
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <h2>Lorem ipsum dolor sit amet.</h2>    
+        <p>Lorem ipsum dolor sit amet.</p>
+        <input type="password" name="Password" id="pass">
+
+        <ul>
+            <li class="list-item">one</li>
+            <li class="list-item">two</li>
+            <li class="list-item">three</li>
+            <li class="list-item">four</li>
+        </ul>
+
+
+    </div>
+
+    <!-- Console Practice
+    
+=>      document.getElementById('title')
+         <h1 id=​"title" class=​"headings">​…​</h1>​
+
+=>    document.getElementById('title').id
+         'title'
+
+=>      document.getElementById('title').className
+         'headings'
+    
+=>      document.getElementById('title').getAttribute('title')
+         null
+
+=>      document.getElementById('title').getAttribute('id')
+         'title'
+
+=>      const title = document.getElementById('title')
+         undefined
+
+=>      title
+         <h1 id=​"title" class=​"headings">​"DOM Learnings with Paramsinh "<span style=​"display:​ none;​">​hidden text​</span>​</h1>​
+
+=>      title.style.color = 'red'
+         'red'
+  
+=>      title.style.backgroundColor = 'green'
+         'green'
+  
+=>      title.style.padding = '10px'
+         '10px'
+  
+=>      title.textContent
+         'DOM Learnings with Paramsinh hidden text'
+   
+=>      title.innerHTML
+         'DOM Learnings with Paramsinh <span style="display: none;">hidden text</span>'
+   
+=>      title.innerText
+         'DOM Learnings with Paramsinh'
+
+=>      document.querySelector('h2')
+         <h2>​Lorem ipsum dolor sit amet.​</h2>​
+
+=>      document.querySelectorAll('h2')
+         NodeList(4) [h2, h2, h2, h2]0: h21: h22: h23: h2length: 4[[Prototype]]: NodeList
+        
+=>      document.querySelector('#title')
+         <h1 id=​"title" class=​"headings">​…​</h1>​
+
+=>      document.querySelector('.headings')
+         <h1 id=​"title" class=​"headings">​…​</h1>​
+
+=>      document.querySelector('input[type="password"]')
+         <input type=​"password" name=​"Password" id=​"pass">​
+
+=>      document.querySelector('ul')
+         <ul>​…​</ul>​
+
+=>      document.querySelector('li')
+         <li>​…​</li>​
+       
+=>      const myul = document.querySelector('ul')
+         undefined
+       
+=>      myul.querySelector('li')
+         <li>​…​</li>​
+       
+=>      const red = myul.querySelector('li')
+         undefined
+       
+=>      red.style.backgroundColor = 'red'
+         'red'
+       
+=>      red.style.padding = '15px'
+         '15px'
+       
+=>      red.innerText
+         'one'
+       
+=>      red.innerText = 'five'
+         'five'
+
+=>      const nodeList = document.querySelectorAll('li')
+         undefined
+
+=>      nodeList
+         NodeList(3) [li, li, li]0: li1: li2: lilength: 3[[Prototype]]: NodeListentries: ƒ entries()forEach: ƒ forEach()item: ƒ item()keys: ƒ keys()length: (...)values: ƒ values()constructor: ƒ NodeList()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.toStringTag): "NodeList"get length: ƒ length()[[Prototype]]: Object
+      
+=>      nodeList.style.color = 'red'
+         VM4958:1 Uncaught TypeError: Cannot set properties of undefined (setting 'color')
+            at <anonymous>:1:23
+        (anonymous) @ VM4958:1Understand this error
+       
+=>      nodeList[0].style.color = 'red'
+         'red'
+       
+=>      nodeList[0].style.color = 'green'
+         'green'
+       
+=>      const myH1 = document.querySelectorAll('h1')
+         undefined
+       
+=>      myH1
+         NodeList [h1#title.headings]
+       
+=>      myH1.style.color = 'green'
+         VM5039:1 Uncaught TypeError: Cannot set properties of undefined (setting 'color')
+            at <anonymous>:1:19
+        (anonymous) @ VM5039:1Understand this error
+       
+=>      myH1[0].style.color = 'green'
+         'green'
+
+=>      nodeList.forEach( (l) => l.style.backgroundColor = 'red')
+         undefined
+
+=>      document.getElementsByClassName('list-item')
+         HTMLCollection(4) [li.list-item, li.list-item, li.list-item, li.list-item]0: li.list-item1: li.list-item2: li.list-item3: li.list-itemlength: 4[[Prototype]]: HTMLCollectionitem: ƒ item()length: (...)namedItem: ƒ namedItem()constructor: ƒ HTMLCollection()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.toStringTag): "HTMLCollection"get length: ƒ length()[[Prototype]]: Object
+     
+=>      const tempClass = document.getElementsByClassName('list-item')
+         undefined
+      
+=>      tempClass
+         HTMLCollection(4) [li.list-item, li.list-item, li.list-item, li.list-item]0: li.list-item1: li.list-item2: li.list-item3: li.list-itemlength: 4[[Prototype]]: HTMLCollection
+       
+=>      const myArray = Array.from(tempClass) // convert into array ===
+         undefined
+      
+=>      myArray
+         (4) [li.list-item, li.list-item, li.list-item, li.list-item]
+      
+=>      myArray.forEach( function (li) {
+            li.style.color = 'orange'
+        })
+         undefined
+
+
+
+
+         
+    --> 
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toggle Interval</title>
+</head>
+<body>
+  <h1>Paramsinh</h1>
+  <button id="toggle">Start</button>
+</body>
+<script>
+  let intervalId = null; // to store interval ID
+  let running = false;   // to check if interval is running
+
+  const sayDate = function(str) {
+    console.log(str, Date.now());
+  }
+
+  document.querySelector('#toggle').addEventListener('click', function () {
+    if (!running) {
+      // Start interval
+      intervalId = setInterval(sayDate, 1000, "parubha");
+      running = true;
+      this.textContent = "Stop"; // change button text
+      console.log("Interval Started");
+    } else {
+      // Stop interval
+      clearInterval(intervalId);
+      running = false;
+      this.textContent = "Start"; // reset button text
+      console.log("Interval Stopped");
+    }
+  });
+</script>
+</html>

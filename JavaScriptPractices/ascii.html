@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ascii</title>
+</head>
+<body>
+
+    <script>
+
+        function ascii(string) {
+            
+            let element = '';
+
+            for (let i = 0; i < string.length; i++) {
+                 
+                 if (string.charAt(i) == ' ') {
+                    element += " ";
+                 }else{
+                    element += string.charCodeAt(i)+'-' + string.charAt(i) + ',';
+                 }
+
+            }
+            console.log(element);
+            
+        }
+
+        ascii('A Z a z ');
+    </script>
+    
+</body>
+</html>

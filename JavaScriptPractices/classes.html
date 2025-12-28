@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes </title>
+</head>
+<body>
+    
+</body>
+</html>
+
+
+<script>
+        class BankAccount {
+
+        constructor(accountHolderName, balance) {
+            this.accountHolderName = accountHolderName;
+            this.accountNumber = Date.now();
+            this.balance = balance;
+
+        }
+
+        deposit(amount) {
+            this.balance += amount;
+        }
+
+        withdraw(amount) {
+            this.balance -= amount;
+        }
+
+    }
+
+    const param = new BankAccount("john doe", 3000);
+    param.deposit(1000);
+
+    const parthik = new BankAccount('parthik chavda', 5000);
+    parthik.withdraw(2000);
+
+
+    console.log(param, parthik);
+
+</script>

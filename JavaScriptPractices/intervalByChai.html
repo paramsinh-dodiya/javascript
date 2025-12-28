@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>intervals</title>
+</head>
+<body>
+    <h1>Paramsinh</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayDate = function(str){
+        console.log(str, Date.now());
+    }
+
+    document.querySelector('#start').addEventListener('click', function () {
+        console.log('Interval Start');
+        const intervalId = setInterval(sayDate, 1000, "parubha")
+
+        document.querySelector('#stop').addEventListener('click', function () {
+        console.log("Interval Stop");
+        const clear = clearInterval(intervalId);
+        
+        }, { once: true })
+    })
+
+    // ============= Second method ===============
+    
+    // let intervalId; // declare globally so both functions can use it
+
+    // const sayDate = function(str) {
+    //     console.log(str, Date.now());
+    // }
+
+    // document.querySelector('#start').addEventListener('click', function () {
+    //     console.log('Interval Start');
+    //     intervalId = setInterval(sayDate, 1000, "parubha"); // save ID
+    // });
+
+    // document.querySelector('#stop').addEventListener('click', function () {
+    //     console.log("Interval Stop");
+    //     clearInterval(intervalId); // use ID to stop
+    // });
+    
+</script>
+</html>

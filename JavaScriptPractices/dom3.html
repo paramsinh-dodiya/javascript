@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Learning part 3</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+    const div = document.createElement('div');
+    console.log(div);
+    div.className = "main"
+    div.id = "myId"
+    // div.setAttribute("title", "generated title")
+    div.title = "myName"
+    div.style.backgroundColor = 'green'
+    div.style.padding = '13px'
+    // div.innerText = "paramsinh dodiya"
+    const addtext = document.createTextNode("paramsinh dodiya")
+    div.appendChild(addtext)
+
+    document.body.appendChild(div)
+
+</script>
+
+</html>
